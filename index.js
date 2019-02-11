@@ -16,7 +16,8 @@ module.exports = function fasterPetrax(dispatch) {
 	dispatch.hook('S_LOAD_TOPO', 3, (event) => {
 		currentZone = event.zone;
 		if (event.zone == PETRAX_ZONE_ID) {
-			command.message(`Welcome to Pit of Petrax! Faster-Petrax is currently ${config.enabled ? 'enabled' : 'disabled'}; teleport facing Petrax's ${getPositionString(config.back)}`)
+			command.message(`[Faster-Petrax] Welcome! Faster-Petrax is currently ${config.enabled ? 'enabled' : 'disabled'}.`);
+			command.message(`[Faster-Petrax] Teleports facing Petrax's ${getPositionString(config.back)}`)
 		}
 	});
 	
@@ -40,12 +41,12 @@ module.exports = function fasterPetrax(dispatch) {
 		switch (arg) {
 			case 'facing':
 				config.back = !config.back;
-				command.message(`Teleport facing Petrax's ${getPositionString(config.back)}`);
+				command.message(`[Faster-Petrax] Teleport facing Petrax's ${getPositionString()}`);
 				break;
 			
 			default:
 				config.enabled = !config.enabled;			
-				command.message(`Faster-Petrax is now ${config.enabled ? 'enabled' : 'disabled'}.`);		
+				command.message(`[Faster-Petrax] Now ${config.enabled ? 'enabled' : 'disabled'}.`);		
 				break;
 		}
 	});
@@ -62,7 +63,7 @@ module.exports = function fasterPetrax(dispatch) {
 	
 	// Do the thing... y'know, the "thing".
 	function teleportToPetrax() {
-		command.message(`Teleporting to Petrax's spawn, ${getPositionString(config.back)}.`)
+		command.message(`[Faster-Petrax] Teleporting to ${getPositionString(config.back)} of Petrax spawn.`)
 		dispatch.toClient('S_INSTANT_MOVE', 3, {
 			gameId: id,
 			loc: getTeleportLoc(),
@@ -71,8 +72,8 @@ module.exports = function fasterPetrax(dispatch) {
 	}
 	
 	// zzz
-	function getPositionString(back) {
-		return back ? `back` : `front`;
+	function getPositionString() {
+		return config.back ? `back` : `front`;
 	}
 	
 	// teleport to his front or back?
