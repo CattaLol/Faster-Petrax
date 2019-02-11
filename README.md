@@ -9,6 +9,8 @@ Tera-Proxy QoL module for faster Pit of Petrax runs.
 
 ## Usage:
 - When enabled, this module will teleport you to Petrax (either behind or in front, dependent on settings) when the boss spawns.
+   - This means you will be teleported beside Petrax _**after**_ interacting with the computer terminal at the start of the dungeon.
+   - You will also be teleported beside Petrax _**immediately**_ upon entering the dungeon, **if** you had to respawn inside without killing the boss.
 - Edit config.json to change default settings.
 
 ## Commands (in the proxy channel):
