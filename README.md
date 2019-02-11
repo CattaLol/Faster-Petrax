@@ -4,6 +4,8 @@ By: Cattalol
 
 Tera-Proxy QoL module for faster Pit of Petrax runs.
 
+If you ever paid for this, or any other script that took literally less than 20 minutes to write and test - _you have my deepest condolences_.
+
 ## Proxy compatibility:
 - Tested on Caali's proxy only.
 
