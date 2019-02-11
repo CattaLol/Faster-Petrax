@@ -64,7 +64,7 @@ module.exports = function fasterPetrax(dispatch) {
 		command.message(`Teleporting to Petrax's spawn, ${getPositionString(config.back)}.`)
 		dispatch.toClient('S_INSTANT_MOVE', 3, {
 			gameId: id,
-			loc: PETRAX_SPAWN_LOC_BACK,
+			loc: getTeleportLoc(),
 			w: 0
 		});
 	}
