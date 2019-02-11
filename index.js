@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const PETRAX_HUNTINGZONE_ID = 126;
 const PETRAX_TEMPLATE_ID = 107;
 const PETRAX_ZONE_ID = 9126;
