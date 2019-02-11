@@ -25,6 +25,7 @@ module.exports = function fasterPetrax(dispatch) {
 		id = event.gameId
 	});	
 	
+	// Check if the NPC is Mr. Petrax himself.
 	dispatch.hook('S_SPAWN_NPC', 11, (event) => {
 		if (event.huntingZoneId == PETRAX_HUNTINGZONE_ID && event.templateId == PETRAX_TEMPLATE_ID && config.enabled) {
 			setTimeout(teleportToPetrax, 250);
