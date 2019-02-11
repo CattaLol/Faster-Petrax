@@ -17,7 +17,7 @@ module.exports = function fasterPetrax(dispatch) {
 		currentZone = event.zone;
 		if (event.zone == PETRAX_ZONE_ID) {
 			command.message(`[Faster-Petrax] Welcome! Faster-Petrax is currently ${config.enabled ? 'enabled' : 'disabled'}.`);
-			command.message(`[Faster-Petrax] Teleports facing Petrax's ${getPositionString(config.back)}`)
+			command.message(`[Faster-Petrax] Teleports facing Petrax's ${getPositionString()}`)
 		}
 	});
 	
