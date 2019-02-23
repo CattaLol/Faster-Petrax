@@ -1,6 +1,7 @@
-const PETRAX_HUNTINGZONE_ID = 126;
-const PETRAX_TEMPLATE_ID = 107;
 const PETRAX_ZONE_ID = 9126;
+const PETRAX_NPC_ID = { huntingZoneId : 126, templateId : 107 };
+const WITHERED_PETRAX_NPC_ID = { huntingZoneId : 126, templateId : 1071 };
+// Location data (modify these to your preference so you don't need to move after teleporting to begin your combos).
 const PETRAX_SPAWN_LOC_BACK = { x: -130616, y: -113510, z: 248 };
 const PETRAX_SPAWN_LOC_FRONT = { x: -130587, y: -113981, z: 248 };
 
@@ -25,9 +26,9 @@ module.exports = function fasterPetrax(dispatch) {
 	});	
 	
 	// Check if the NPC is Mr. Petrax himself.
-	dispatch.hook('S_SPAWN_NPC', 11, (event) => {
-		if (event.huntingZoneId == PETRAX_HUNTINGZONE_ID && event.templateId == PETRAX_TEMPLATE_ID && config.enabled) {
-			setTimeout(teleportToPetrax, 250);
+	dispatch.hook('S_SPAWN_NPC', 11, (event) => {		
+		if (config.enabled && (compareNPC(event, PETRAX_NPC_ID) || compareNPC(event, WITHERED_PETRAX_NPC_ID))) {
+			setTimeout(teleportToPetrax, 500);
 		}		
 	});
 	
@@ -77,5 +78,10 @@ module.exports = function fasterPetrax(dispatch) {
 	// teleport to his front or back?
 	function getTeleportLoc() {
 		return config.back ? PETRAX_SPAWN_LOC_BACK : PETRAX_SPAWN_LOC_FRONT;
+	}
+	
+	// Check if huntingzoneid and templateid are equivalent. Return true if matching, false if not matching.
+	function compareNPC(checkData, referenceData){
+		return (checkData.huntingZoneId == referenceData.huntingZoneId && checkData.templateId == referenceData.templateId);
 	}
 }
