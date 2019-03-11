@@ -4,7 +4,7 @@ By: Cattalol
 
 Tera-Proxy QoL module for faster Pit of Petrax runs.
 
-If you ever paid for this, or any other script that took less than 30 minutes to write and test - _you have my deepest condolences_.
+You (as the user that downloads and/or uses this content) are solely responsible for your own actions and any consequences that result from your actions.
 
 ## Proxy compatibility:
 - Tested on Caali's proxy only.
@@ -22,3 +22,11 @@ If you ever paid for this, or any other script that took less than 30 minutes to
 - Toggles teleport location between front/back of Petrax's spawn.
 ### toPetrax
 - Manual teleport to the designated position in front or behind Petrax's spawn. Does not work outside the dungeon.
+
+## Config.json Properties
+### enabled [true/false]
+- Whether this module is enabled upon starting the game
+### back [true/false]
+- If true, the location you will be teleported to will be to Petrax's back. If false, then you will be teleported to Petrax's front.
+### teleportDelay [number > 0]
+- Sets the delay between the NPC spawning and you teleporting.

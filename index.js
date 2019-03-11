@@ -28,7 +28,7 @@ module.exports = function fasterPetrax(dispatch) {
 	// Check if the NPC is Mr. Petrax himself.
 	dispatch.hook('S_SPAWN_NPC', 11, (event) => {		
 		if (config.enabled && (compareNPC(event, PETRAX_NPC_ID) || compareNPC(event, WITHERED_PETRAX_NPC_ID))) {
-			setTimeout(teleportToPetrax, 500);
+			setTimeout(teleportToPetrax, config.teleportDelay);
 		}		
 	});
 	
