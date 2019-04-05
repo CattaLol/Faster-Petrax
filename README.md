@@ -2,7 +2,9 @@
 
 By: Cattalol
 
-Tera-Proxy QoL module for faster Pit of Petrax runs. To be specific, this module will save you roughly 10 seconds (more or less, depending on how many dashes/jumps/blinks/etc your class offers) as you will no longer need to spend time manually walking up to Petrax when he spawns.
+Tera-Proxy QoL module for faster Pit of Petrax runs. 
+
+To be specific, this module will save you roughly 10 seconds (more or less, depending on how many dashes/jumps/blinks/etc your class offers) as you will no longer need to spend time manually walking up to Petrax when he spawns.
 
 You (as the user of this content) are solely responsible for your own actions and any consequences that result from your actions.
 
