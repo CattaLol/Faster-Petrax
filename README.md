@@ -14,6 +14,7 @@ You (as the user of this content) are solely responsible for your own actions an
 ## Usage:
 - When enabled, this module will teleport you to Petrax (either behind or in front, dependent on settings) when the boss spawns.
    - This means you will be teleported beside Petrax _**after**_ interacting with the computer terminal at the start of the dungeon.
+     - You can extend (or reduce) the delay between when Petrax spawns and the timing of the teleport by adjusting the `teleportDelay` property within config.json file.
    - You will also be teleported beside Petrax _**immediately**_ upon entering the dungeon, **if** you had to respawn inside without killing the boss.
 - Edit config.json to change default settings.
 
