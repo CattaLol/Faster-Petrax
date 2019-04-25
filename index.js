@@ -21,7 +21,7 @@ module.exports = function fasterPetrax(dispatch) {
 	});
 	
 	// Get our gameID.
-	dispatch.hook('S_LOGIN', 12, (event) => {
+	dispatch.hook('S_LOGIN', dispatch.majorPatchVersion >= 81 ? 13 : 12, (event) => {
 		id = event.gameId
 	});	
 	
