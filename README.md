@@ -9,7 +9,7 @@ To be specific, this module will save you roughly 10 seconds (more or less, depe
 You (as the user of this content) are solely responsible for your own actions and any consequences that result from your actions.
 
 ## Proxy compatibility:
-- Tested on Caali's proxy only.
+- Tested on [Caali's Toolbox](https://github.com/tera-toolbox/tera-toolbox) only.
 - To bypass the current (as of 2019-09-25) built-in blacklist in [Tera-Proxy](https://github.com/tera-proxy/tera-proxy), rename the module folder to anything that doesn't contain the phrase "faster-petrax" (e.g. "FstPtrx").
 
 ## Usage:
