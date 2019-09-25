@@ -41,7 +41,7 @@ module.exports = function fasterPetrax(dispatch) {
 	// In-game access to settings
 	command.add('fasterPetrax', (arg, arg2) => {
 		if (arg != undefined){
-			arg = arg.toLowerCase();		
+			arg = arg.toLowerCase();
 			switch (arg) {
 				case 'facing':
 					config.back = !config.back;
