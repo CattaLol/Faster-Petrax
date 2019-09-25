@@ -2,7 +2,7 @@
 
 By: Cattalol
 
-Tera-Toolbox / Tera-Proxy QoL module for faster Pit of Petrax runs. 
+Tera-Toolbox / Tera-Proxy QoL module for faster Pit of Petrax runs.
 
 To be specific, this module will save you roughly 10 seconds (more or less, depending on how many dashes/jumps/blinks/etc your class offers) as you will no longer need to spend time manually walking up to Petrax when he spawns.
 
@@ -20,7 +20,7 @@ You (as the user of this content) are solely responsible for your own actions an
 - Edit config.json or access the commands detailed below, to modify settings. Modifications are persistent between game sessions.
 
 ## Commands (in the toolbox/proxy channel):
-### fasterPetrax 
+### fasterPetrax
 - Toggles enable/disable 
 ### fasterPetrax facing
 - Toggles teleport location between front/back of Petrax's spawn.
