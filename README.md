@@ -43,4 +43,6 @@ You (as the user of this content) are solely responsible for your own actions an
 ### back [true/false]
 - If true, the location you will be teleported to will be to Petrax's back. If false, then you will be teleported to Petrax's front.
 ### teleportDelay [number > 0]
-- Sets the delay between the NPC spawning and you teleporting.
+- The delay between the NPC spawning and you teleporting.
+### teleportDistance [number > 0]
+- The distance (in game units) away from Petrax you will be teleporting to.
