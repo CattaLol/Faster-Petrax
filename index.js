@@ -30,11 +30,16 @@ module.exports = function fasterPetrax(dispatch) {
 	
 	// Check if the NPC spawned is Mr. Petrax himself.
 	dispatch.hook('S_SPAWN_NPC', 11, (event) => {		
-		if (config.enabled && (compareNPC(event, SCOREBOARD_PETRAX_NPC_ID) || compareNPC(event, WITHERED_PETRAX_NPC_ID))) {
-			command.message(`Petrax detected! Teleporting in ${config.teleportDelay/1000} seconds!`)
+		if (compareNPC(event, SCOREBOARD_PETRAX_NPC_ID) || compareNPC(event, WITHERED_PETRAX_NPC_ID)) {
 			petraxSpawnLoc = Object.assign({}, event.loc);
 			petraxAngle = event.w
-			setTimeout(teleportToPetrax, config.teleportDelay);
+			if (config.enabled){
+				command.message(`Petrax spawn detected! Teleporting in ${config.teleportDelay/1000} seconds!`)
+				setTimeout(teleportToPetrax, config.teleportDelay);
+			}
+			else{
+				command.message(`Petrax spawn detected, but module is currently disabled.`)
+			}
 		}		
 	});
 	
@@ -96,11 +101,16 @@ module.exports = function fasterPetrax(dispatch) {
 	// :^)
 	function teleportToPetrax() {
 		command.message(`Teleporting near Petrax spawn...`)
-		dispatch.toClient('S_INSTANT_MOVE', 3, {
-			gameId: id,
-			loc: getTeleportLoc(),
-			w: 0
-		});
+		if (petraxSpawnLoc != undefined){
+			dispatch.toClient('S_INSTANT_MOVE', 3, {
+				gameId: id,
+				loc: getTeleportLoc(),
+				w: 0
+			});
+		}
+		else {
+			command.message(`Invalid Petrax Location (undefined)`);
+		}
 	}
 	
 	// :ZzZ:
@@ -119,7 +129,7 @@ module.exports = function fasterPetrax(dispatch) {
 		return (checkData.huntingZoneId == referenceData.huntingZoneId && checkData.templateId == referenceData.templateId);
 	}
 
-	// Reverse direction (radians)
+	// Reverse direction (in radians)
 	function reverseAngle(angle){
 		return angle > 0 ? angle - Math.PI : angle + Math.PI;
 	}
@@ -136,6 +146,7 @@ module.exports = function fasterPetrax(dispatch) {
 		return newLoc;
 	}
 	
+	// :pepepoggers:
 	function saveJson(data, path) {
 		fs.writeFile(path, JSON.stringify(data, null, '\t'), 'utf8', function (err) {
 			if (!err){
@@ -147,6 +158,7 @@ module.exports = function fasterPetrax(dispatch) {
 		});
 	}
 	
+	// :pepeoggers:
 	function loadJson(filePath){
 		try {
 			let data = JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -164,6 +176,7 @@ module.exports = function fasterPetrax(dispatch) {
 		}
 	}
 	
+	// :shrug:
 	function getDefaultJson() {
 		let settings = {
 			enabled: true,
