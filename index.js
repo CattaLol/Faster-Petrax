@@ -24,7 +24,7 @@ module.exports = function fasterPetrax(dispatch) {
 	});
 	
 	// Get our gameID.
-	dispatch.hook('S_LOGIN', 13 , (event) => {
+	dispatch.hook('S_LOGIN', 14 , (event) => {
 		id = event.gameId
 	});	
 	
